@@ -153,6 +153,18 @@ p {
   margin-top: 34px;
 }
 
+.download-note {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 14px;
+  max-width: 760px;
+  overflow-wrap: anywhere;
+}
+
+.download-note code {
+  font-size: 12px;
+}
+
 .primary-action,
 .secondary-action {
   border-radius: 7px;
@@ -598,6 +610,7 @@ footer {
   border-top: 1px solid var(--line);
   color: var(--muted);
   display: flex;
+  gap: 18px;
   justify-content: space-between;
   padding: 26px clamp(18px, 5vw, 72px);
 }

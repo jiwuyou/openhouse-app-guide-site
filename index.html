@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OpenHouse App 使用说明</title>
+  <meta name="description" content="OpenHouse App 维护中心、网页维护器、插件源和 AI Agent 安装使用说明。">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="site-header" aria-label="站点导航">
+    <a class="brand" href="#top" aria-label="OpenHouse App 首页">
+      <span class="brand-mark">OH</span>
+      <span>OpenHouse App</span>
+    </a>
+    <nav>
+      <a href="#enter">进入维护器</a>
+      <a href="#quick-start">快速开始</a>
+      <a href="#web">网页维护器</a>
+      <a href="#agents">Agent</a>
+      <a href="#trouble">排障</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Termux 二次开发版 · 本地维护入口</p>
+        <h1 id="hero-title">OpenHouse App 使用说明</h1>
+        <p class="hero-lead">先拿系统权限，再选择 APK 内维护中心或本地网页维护器完成 Ubuntu、OpenCode、Codex、Claude Code 和 Agent skills 的安装配置。</p>
+        <div class="hero-actions" aria-label="主要操作">
+          <a class="primary-action" href="#enter">先看怎么进入维护器</a>
+          <a class="secondary-action" href="#web">查看网页维护器</a>
+        </div>
+      </div>
+      <figure class="phone-shot" aria-label="维护中心界面预览">
+        <img src="./assets/maintenance-center.png" alt="OpenHouse App 维护中心界面截图">
+      </figure>
+    </section>
+
+    <section id="enter" class="section access-layout" aria-labelledby="enter-title">
+      <div>
+        <p class="eyebrow">入口位置</p>
+        <h2 id="enter-title">先进入 App 内的维护中心</h2>
+        <p>主界面是 Termux 终端。右下角有两个悬浮按钮：下面的绿色按钮进入维护中心，上面的浅色按钮用于 OpenCode 快速启动。</p>
+      </div>
+      <div class="entry-panel">
+        <div class="main-screen-map" aria-label="主界面入口布局示意">
+          <div class="terminal-top">
+            <span>Termux</span>
+            <span>session</span>
+          </div>
+          <div class="terminal-lines" aria-hidden="true">
+            <i></i><i></i><i></i><i></i><i></i><i></i>
+          </div>
+          <div class="fab open-code" aria-label="OpenCode 快速启动">OC</div>
+          <div class="fab maintainer" aria-label="打开维护中心">维护</div>
+          <div class="entry-callout open-code-callout">OpenCode 快速启动</div>
+          <div class="entry-callout maintainer-callout">点击这里进入维护中心</div>
+        </div>
+        <div class="access-path" aria-label="进入维护器步骤">
+          <div>
+            <span>01</span>
+            <strong>打开 OpenHouse App</strong>
+            <p>安装 APK 后，从手机桌面或应用列表打开 OpenHouse。</p>
+          </div>
+          <div>
+            <span>02</span>
+            <strong>点右下角绿色悬浮按钮</strong>
+            <p>按钮的无障碍名称是“打开维护中心”。它在 OpenCode 快速启动按钮的下方。</p>
+          </div>
+          <div>
+            <span>03</span>
+            <strong>同意协议后进入维护中心</strong>
+            <p>首次进入会先显示 OpenHouse 使用说明和免责声明，同意后自动进入维护中心。</p>
+          </div>
+          <div>
+            <span>04</span>
+            <strong>需要网页时再启动网页维护器</strong>
+            <p>在维护中心点击“启动并打开本地网页维护器”，浏览器会打开 127.0.0.1 的本机端口。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="quick-start" class="section intro-grid" aria-labelledby="quick-title">
+      <div>
+        <p class="eyebrow">第一步</p>
+        <h2 id="quick-title">进入维护中心后按这个顺序走</h2>
+      </div>
+      <ol class="steps">
+        <li>
+          <strong>完成权限获取</strong>
+          <span>电池优化是关键权限；悬浮窗和存储按需要开启。权限开关只负责跳转授权，不会直接执行安装。</span>
+        </li>
+        <li>
+          <strong>选择执行模式</strong>
+          <span>新用户用“一键执行”；排障或重装某一段时用“分步执行”。选好后优先完成 OpenCode 阶段。</span>
+        </li>
+        <li>
+          <strong>访问 OpenCode</strong>
+          <span>OpenCode 启动后，在手机浏览器打开 <code>http://127.0.0.1:4096/</code> 或 <code>http://localhost:4096/</code>，先切换到更适合编码和配置工作的模型。</span>
+        </li>
+        <li>
+          <strong>让 OpenCode 接手后续配置</strong>
+          <span>在 OpenCode 里要求它读取 Agent skills，并按说明协助配置 Codex、Claude Code、第三方 API 和登录方式。</span>
+        </li>
+      </ol>
+    </section>
+
+    <section class="section opencode-guide" aria-labelledby="opencode-title">
+      <div>
+        <p class="eyebrow">推荐操作</p>
+        <h2 id="opencode-title">用 OpenCode 完成后续 AI 软件配置</h2>
+        <p>维护中心负责把 OpenCode 跑起来。进入 OpenCode 后，先选择更适合编码和配置的模型，再把配置 Codex、Claude Code、第三方 API 的工作交给 OpenCode。</p>
+      </div>
+      <div class="opencode-panel">
+        <div>
+          <strong>打开地址</strong>
+          <code>http://127.0.0.1:4096/</code>
+          <code>http://localhost:4096/</code>
+        </div>
+        <div>
+          <strong>先换到更好的模型</strong>
+          <p>优先选择你账号里最强的编程或推理模型。如果不确定，让 OpenCode 先列出可用模型，并按质量、速度、成本给出推荐。</p>
+        </div>
+        <div class="prompt-box">
+          <div class="prompt-head">
+            <strong>复制给 OpenCode 的引导词</strong>
+            <button type="button" data-copy-target="opencode-prompt">复制</button>
+          </div>
+          <pre id="opencode-prompt">请先不要直接执行安装或修改配置。请按下面顺序帮我完成 OpenHouse 后续 AI 软件配置：
+
+0. 先确认当前 OpenCode 使用的模型是否适合编码、排障和环境配置。如果当前模型偏弱，请引导我切换到当前账号可用的更强编程/推理模型；如果有多个选择，请按质量、速度、成本给出推荐。
+
+1. 先阅读本机已有文档和 skills：
+   - ~/product-docs
+   - ~/.config/opencode/skills/system-environment-description/SKILL.md
+   - ~/.config/opencode/skills/install-ai-agents/SKILL.md
+
+2. 先检查当前环境，不要覆盖用户已有配置：
+   - Termux home、Ubuntu proot、workspace、product-docs 路径
+   - OpenCode 当前端口和运行状态
+   - Codex 是否已安装、版本、登录状态
+   - Claude Code 是否已安装、版本、登录状态
+   - Node.js、npm、curl、git、ca-certificates 是否可用
+
+3. 给出一个执行计划，把每一步分成“检查、安装、登录、第三方 API 配置、验证”。
+
+4. 官方登录方式和第三方 API 配置都要分别说明。不要把 API key 写死进脚本，不要保存明文密钥到不必要的位置。
+
+5. 需要执行命令时，先展示命令和影响，再等我确认。优先在 Ubuntu proot 中安装和配置 Codex、Claude Code。</pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="section flow" aria-labelledby="flow-title">
+      <div class="section-heading">
+        <p class="eyebrow">核心流程</p>
+        <h2 id="flow-title">维护中心负责授权和调度，脚本负责实际安装</h2>
+      </div>
+      <div class="flow-line" role="list">
+        <div role="listitem">
+          <span>01</span>
+          <strong>准备 Termux</strong>
+          <p>写入目录、更新基础包，确保 curl、proot-distro 和脚本环境可用。</p>
+        </div>
+        <div role="listitem">
+          <span>02</span>
+          <strong>安装 Ubuntu</strong>
+          <p>AI 工具统一放进 Ubuntu proot，避免 Android 原生环境兼容问题。</p>
+        </div>
+        <div role="listitem">
+          <span>03</span>
+          <strong>启动 OpenCode</strong>
+          <p>执行到 OpenCode 阶段后，访问 127.0.0.1:4096，让 OpenCode 作为后续配置助手。</p>
+        </div>
+        <div role="listitem">
+          <span>04</span>
+          <strong>配置其他 Agent</strong>
+          <p>让 OpenCode 按内置 skill 帮你完成 Codex、Claude Code 和第三方 API 配置。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="web" class="section web-layout" aria-labelledby="web-title">
+      <div>
+        <p class="eyebrow">本地网页维护器</p>
+        <h2 id="web-title">浏览器里的维护面板</h2>
+        <p>网页维护器运行在手机本机 `127.0.0.1`，通过白名单 API 执行安装、设置和日志动作。它不是远程网站，也不会默认暴露到局域网。</p>
+      </div>
+      <div class="command-block">
+        <div>
+          <strong>默认端口</strong>
+          <code>38423</code>
+        </div>
+        <div>
+          <strong>可改范围</strong>
+          <code>10000-65535</code>
+        </div>
+        <div>
+          <strong>访问地址</strong>
+          <code>http://127.0.0.1:&lt;端口&gt;/</code>
+        </div>
+      </div>
+      <div class="split-note">
+        <div>
+          <h3>打开</h3>
+          <p>在维护中心点击“启动并打开本地网页维护器”。App 会先启动本地服务，再打开浏览器。</p>
+        </div>
+        <div>
+          <h3>关闭</h3>
+          <p>点击“关闭本地网页维护器”。关闭后端口不再监听，浏览器刷新会显示无法访问。</p>
+        </div>
+        <div>
+          <h3>换端口</h3>
+          <p>点击“修改本地维护器端口”，保存后再次启动；运行中的服务会自动重启到新端口。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="agents" class="section agent-layout" aria-labelledby="agent-title">
+      <figure class="tall-shot">
+        <img src="./assets/maintenance-dynamic.png" alt="OpenHouse 动态插件阶段预览截图">
+      </figure>
+      <div>
+        <p class="eyebrow">AI Agent</p>
+        <h2 id="agent-title">先启动 OpenCode，再配置 Codex 和 Claude Code</h2>
+        <ul class="agent-list">
+          <li><strong>OpenCode</strong><span>默认访问 <code>http://127.0.0.1:4096/</code>，启动后作为用户的本地配置助手。</span></li>
+          <li><strong>Codex</strong><span>安装到 Ubuntu proot；让 OpenCode 按 skill 检查登录方式、环境变量和第三方 API 配置。</span></li>
+          <li><strong>Claude Code</strong><span>提供官方登录方法和第三方 API 示例，由 OpenCode 引导用户自行填写密钥。</span></li>
+          <li><strong>Agent skills</strong><span>写入系统环境说明、安装配置说明、路径和端口约定。</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section source-layout" aria-labelledby="source-title">
+      <div>
+        <p class="eyebrow">插件源</p>
+        <h2 id="source-title">更新维护内容不用重装 APK</h2>
+        <p>维护中心支持三套插件源：APK 内置源、本地用户源、GitHub 在线源。在线源更新后，App 刷新维护源即可看到新的阶段流程、阶段说明和动态按钮。</p>
+      </div>
+      <dl class="source-list">
+        <div>
+          <dt>APK 内置源</dt>
+          <dd>随 APK 打包，适合离线兜底。</dd>
+        </div>
+        <div>
+          <dt>本地用户源</dt>
+          <dd>放在 Termux home，可由用户自己修改。</dd>
+        </div>
+        <div>
+          <dt>GitHub 在线源</dt>
+          <dd>默认来自固定 raw 地址，适合快速发布新阶段。</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section id="trouble" class="section trouble" aria-labelledby="trouble-title">
+      <p class="eyebrow">排障</p>
+      <h2 id="trouble-title">常见问题</h2>
+      <div class="faq">
+        <details>
+          <summary>打开网页维护器显示空白或无法访问</summary>
+          <p>先确认维护中心里已经点击“启动并打开本地网页维护器”。如果改过端口，浏览器地址也要换成当前端口。</p>
+        </details>
+        <details>
+          <summary>端口被占用</summary>
+          <p>把本地维护器端口改到另一个 5 位端口，例如 38424，再重新启动。</p>
+        </details>
+        <details>
+          <summary>下载脚本失败</summary>
+          <p>先执行“更新 Termux 软件包”，确保 curl 和证书可用；再刷新维护源。</p>
+        </details>
+        <details>
+          <summary>不想直接进入 Ubuntu</summary>
+          <p>在“启动入口设置”里选择“打开 Termux 后停留 Termux”。需要自动进入 Ubuntu 时再切回去。</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>OpenHouse App 使用说明</span>
+    <a href="#top">回到顶部</a>
+  </footer>
+  <script>
+    document.addEventListener("click", async (event) => {
+      const button = event.target.closest("[data-copy-target]");
+      if (!button) return;
+      const target = document.getElementById(button.dataset.copyTarget);
+      if (!target) return;
+      const text = target.textContent.trim();
+      try {
+        await navigator.clipboard.writeText(text);
+        button.textContent = "已复制";
+        setTimeout(() => {
+          button.textContent = "复制";
+        }, 1600);
+      } catch (error) {
+        const range = document.createRange();
+        range.selectNodeContents(target);
+        const selection = window.getSelection();
+        selection.removeAllRanges();
+        selection.addRange(range);
+        button.textContent = "已选中";
+      }
+    });
+  </script>
+</body>
+</html>

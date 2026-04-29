@@ -89,7 +89,7 @@ nav a:hover {
   align-items: center;
   display: grid;
   gap: clamp(28px, 6vw, 72px);
-  grid-template-columns: minmax(0, 1fr) minmax(260px, 420px);
+  grid-template-columns: minmax(0, 1fr);
   min-height: calc(100svh - 64px);
   overflow: hidden;
   padding: clamp(38px, 7vw, 88px) clamp(18px, 5vw, 72px);
@@ -97,7 +97,7 @@ nav a:hover {
 
 .hero-copy {
   animation: enter-copy 700ms ease both;
-  max-width: 760px;
+  max-width: 920px;
 }
 
 .eyebrow {
@@ -188,21 +188,10 @@ p {
   transform: translateY(-2px);
 }
 
-.phone-shot,
 .tall-shot {
   margin: 0;
 }
 
-.phone-shot {
-  animation: enter-phone 850ms ease 120ms both;
-  justify-self: center;
-  max-height: min(720px, 78svh);
-  overflow: hidden;
-  position: relative;
-  width: min(390px, 84vw);
-}
-
-.phone-shot img,
 .tall-shot img {
   border: 1px solid rgba(23, 33, 29, 0.12);
   border-radius: 22px;
@@ -666,10 +655,6 @@ footer {
   .hero {
     min-height: auto;
     padding-top: 48px;
-  }
-
-  .phone-shot {
-    max-height: 620px;
   }
 
   .flow-line,

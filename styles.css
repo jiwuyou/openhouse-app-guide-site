@@ -147,10 +147,21 @@ p {
 }
 
 .hero-actions {
+  align-items: center;
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
   margin-top: 34px;
+}
+
+.qq-group {
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.qq-group strong {
+  color: var(--accent);
 }
 
 .download-note {
